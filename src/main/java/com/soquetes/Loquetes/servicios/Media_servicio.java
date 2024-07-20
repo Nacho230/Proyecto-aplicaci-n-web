@@ -14,7 +14,7 @@ public class Media_servicio {
         this.mediaRepositorio = mediaRepositorio;
     }
 
-    /*
+    /* Terminar luego
     @Transactional
     public void agregarMedia(Long id, String nombre_producto, String descripcion_producto, Integer precio,
                              Integer stock, Boolean alta_stock){

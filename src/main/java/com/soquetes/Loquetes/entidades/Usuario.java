@@ -1,5 +1,6 @@
 package com.soquetes.Loquetes.entidades;
 
+import com.soquetes.Loquetes.enumeraciones.Rol;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -41,10 +42,8 @@ public class Usuario {
     @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Orden_compra> ordenes;
 
-    //TODO Quitar la enumeracion cuando se cree la enumeracion ROL
-    //@Enumerated(EnumType.STRING)
-    /*protected Rol rol;*/
-
+    @Enumerated(EnumType.STRING)
+    protected Rol rol;
     @PrePersist
     protected void creacion(){ // Pequeña función que otorga una fecha de creacion a la entidad previo a persistirse
         fecha_creacion = LocalDateTime.now();

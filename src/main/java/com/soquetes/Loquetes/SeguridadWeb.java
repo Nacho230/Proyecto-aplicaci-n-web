@@ -1,32 +1,25 @@
 package com.soquetes.Loquetes;
 
 
-import com.soquetes.Loquetes.servicios.UsuarioServicio;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.soquetes.Loquetes.servicios.Usuario_servicio;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
-import org.springframework.security.config.annotation.authentication.configuration.EnableGlobalAuthentication;
-import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
-
-import java.security.Security;
 
 @Configuration
 @EnableWebSecurity
 @EnableMethodSecurity(prePostEnabled = true)
 public class SeguridadWeb {
 
-    private final UsuarioServicio usuarioServicio;
+    private final Usuario_servicio usuarioServicio;
 
-    public SeguridadWeb(UsuarioServicio usuarioServicio){
+    public SeguridadWeb(Usuario_servicio usuarioServicio){
         this.usuarioServicio = usuarioServicio;
     }
 

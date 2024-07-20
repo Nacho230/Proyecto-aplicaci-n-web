@@ -1,5 +1,6 @@
 package com.soquetes.Loquetes.entidades;
 
+import com.soquetes.Loquetes.enumeraciones.Tipo_media;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -43,9 +44,8 @@ public class Media {
     @OneToMany(mappedBy = "media", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Detalle_compra> detalle_compras;
 
-    //TODO: Quitar comentario cuando se agregue la enumeración: 'Tipo de media'
-    //@Enumerated(EnumType.STRING)
-    //protected Tipo_media tipo;
+    @Enumerated(EnumType.STRING)
+    protected Tipo_media tipo;
 
     @PrePersist
     protected void creacion(){ // Pequeña función que otorga una fecha de creacion a la entidad previo a persistirse

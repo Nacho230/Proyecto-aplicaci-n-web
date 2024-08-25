@@ -26,6 +26,6 @@ public class Detalle_compra {
 
     private Integer cantidad;
 
-    private Double precio;
+    private Integer precio;
 
 }

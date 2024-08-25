@@ -29,4 +29,11 @@ public class Carrito {
     @JoinColumn(name = "media_id", referencedColumnName = "id")
     private Media media;
 
+    private Integer cantidad;
+
+    public Carrito(Usuario usuario, Media media, Integer cantidad) {
+        this.usuario = usuario;
+        this.media = media;
+        this.cantidad = cantidad;
+    }
 }

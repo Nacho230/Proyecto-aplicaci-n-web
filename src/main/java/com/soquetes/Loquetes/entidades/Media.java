@@ -10,6 +10,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -46,6 +47,11 @@ public class Media {
 
     @Enumerated(EnumType.STRING)
     protected Tipo_media tipo;
+
+    protected Boolean alta_sistema;
+
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Imagen> imagenes = new ArrayList<>();
 
     @PrePersist
     protected void creacion(){ // Pequeña función que otorga una fecha de creacion a la entidad previo a persistirse
